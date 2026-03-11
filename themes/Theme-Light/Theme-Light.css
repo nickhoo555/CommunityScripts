@@ -36,10 +36,46 @@ body {
   box-shadow: var(--lt-shadow);
 }
 
+/* Keep nav foreground readable on light background */
+#root > nav,
+#root > nav .btn,
+#root > nav .navbar-nav .nav-link,
+#root > nav .minimal,
+#root > nav .btn.btn-primary.minimal,
+#root > nav .btn.btn-secondary.minimal {
+  color: var(--lt-text) !important;
+}
+
+#root > nav .btn.btn-primary.minimal,
+#root > nav .btn.btn-secondary.minimal,
+#root > nav a.minimal.btn.btn-primary,
+#root > nav a.minimal.btn.btn-secondary {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#root > nav .btn.minimal:hover,
+#root > nav .btn.minimal:focus {
+  color: var(--lt-accent) !important;
+}
+
 /* ===== 3.3 Secondary Background ===== */
 
 .bg-secondary {
   background-color: var(--lt-secondary-bg) !important;
+}
+
+/* Sidebar panes should stay light in marker/list layouts */
+.sidebar,
+.sidebar-pane,
+.sidebar-pane-content {
+  background-color: var(--lt-card-bg) !important;
+}
+
+.filtered-list-toolbar.btn-toolbar,
+.sidebar-pane-content .filtered-list-toolbar {
+  background-color: var(--lt-secondary-bg) !important;
+  border-bottom: 1px solid var(--lt-border);
 }
 
 /* ===== 3.4 Cards ===== */
@@ -121,6 +157,50 @@ body {
   border-color: var(--lt-border);
 }
 
+/* Scene toolbar and sidebar actions should not inherit white foreground */
+.scene-toolbar .btn,
+.scene-toolbar .btn.minimal,
+.scene-toolbar .btn.btn-secondary,
+.scene-toolbar .btn.btn-secondary.minimal,
+.scene-toolbar .btn.btn-primary.minimal {
+  color: var(--lt-text) !important;
+}
+
+.scene-toolbar .btn.minimal:hover,
+.scene-toolbar .btn.minimal:focus {
+  color: var(--lt-accent) !important;
+}
+
+.sidebar-pane-content,
+.sidebar-pane-content .row.justify-content-center > div,
+.sidebar-pane-content .row.justify-content-center > div .btn,
+.sidebar-pane-content .row.justify-content-center > div a,
+.sidebar-pane-content .row.justify-content-center > div span,
+.sidebar-pane-content .row.justify-content-center > div h1,
+.sidebar-pane-content .row.justify-content-center > div h2,
+.sidebar-pane-content .row.justify-content-center > div h3,
+.sidebar-pane-content .row.justify-content-center > div h4,
+.sidebar-pane-content .row.justify-content-center > div h5,
+.sidebar-pane-content .row.justify-content-center > div h6 {
+  color: var(--lt-text) !important;
+}
+
+/* Sidebar collapse/filter buttons can inherit white text from btn-primary */
+.sidebar .collapse-button.btn,
+.sidebar .collapse-button.btn.btn-primary,
+.sidebar .minimal.collapse-button.btn.btn-primary,
+.sidebar .btn.minimal,
+.sidebar .btn.btn-primary.minimal {
+  color: var(--lt-text) !important;
+}
+
+.sidebar .collapse-button.btn:hover,
+.sidebar .collapse-button.btn:focus,
+.sidebar .btn.minimal:hover,
+.sidebar .btn.minimal:focus {
+  color: var(--lt-accent) !important;
+}
+
 /* Active state for filter/toggle buttons */
 .btn.active:not(.disabled),
 .btn.active.minimal:not(.disabled) {
@@ -138,9 +218,35 @@ body {
   color: var(--lt-text);
 }
 
+/* Sidebar/filter search uses form-control, keep it light as well */
+.sidebar .form-control,
+.sidebar .clearable-text-field.form-control,
+.sidebar-pane-content .filtered-list-toolbar .form-control,
+.sidebar-pane-content .filtered-list-toolbar .clearable-text-field.form-control {
+  background-color: var(--lt-input-bg) !important;
+  border: 1px solid var(--lt-input-border) !important;
+  border-color: var(--lt-input-border) !important;
+  color: var(--lt-text) !important;
+}
+
+.sidebar .form-control::placeholder,
+.sidebar .clearable-text-field.form-control::placeholder,
+.sidebar-pane-content .filtered-list-toolbar .form-control::placeholder,
+.sidebar-pane-content .filtered-list-toolbar .clearable-text-field.form-control::placeholder {
+  color: var(--lt-text-muted);
+}
+
 .input-control:focus,
 .text-input:focus {
   border-color: var(--lt-accent);
+  box-shadow: 0 0 0 0.2rem rgba(19, 124, 189, 0.2);
+}
+
+.sidebar .form-control:focus,
+.sidebar .clearable-text-field.form-control:focus,
+.sidebar-pane-content .filtered-list-toolbar .form-control:focus,
+.sidebar-pane-content .filtered-list-toolbar .clearable-text-field.form-control:focus {
+  border-color: var(--lt-accent) !important;
   box-shadow: 0 0 0 0.2rem rgba(19, 124, 189, 0.2);
 }
 
@@ -218,6 +324,17 @@ div.react-select__multi-value__label {
 
 .nav-tabs .nav-link {
   color: var(--lt-text-muted);
+}
+
+/* Settings configuration tabs: keep all unselected labels readable */
+[id^="configuration-tabs-tab-"].nav-link:not(.active) {
+  color: var(--lt-text) !important;
+  background-color: transparent;
+}
+
+[id^="configuration-tabs-tab-"].nav-link:not(.active):hover,
+[id^="configuration-tabs-tab-"].nav-link:not(.active):focus {
+  color: var(--lt-accent) !important;
 }
 
 .nav-tabs .nav-link.active {
