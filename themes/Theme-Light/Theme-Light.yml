@@ -1,0 +1,6 @@
+name: Theme - Light
+description: Clean light theme for Stash with soft gray-white backgrounds and blue accents
+version: 1.0.0
+ui:
+  css:
+    - Theme-Light.css

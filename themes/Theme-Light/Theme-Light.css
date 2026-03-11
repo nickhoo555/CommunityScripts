@@ -1,0 +1,373 @@
+/* Theme-Light v1.0.0
+ * A clean, light theme for Stash
+ * CSS-variable driven for easy customization
+ */
+
+/* ===== 2.1 Color Variables ===== */
+
+:root {
+  --lt-bg: #f5f7fa;
+  --lt-card-bg: #ffffff;
+  --lt-nav-bg: #ffffff;
+  --lt-text: #1f2937;
+  --lt-text-muted: #6b7280;
+  --lt-accent: #137cbd;
+  --lt-accent-hover: #106ba3;
+  --lt-accent-active: #0e5a8a;
+  --lt-border: #e5e7eb;
+  --lt-input-bg: #ffffff;
+  --lt-input-border: #d1d5db;
+  --lt-secondary-bg: #eef1f5;
+  --lt-secondary-hover: #e2e6eb;
+  --lt-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== 3.1 Body Background ===== */
+
+body {
+  background-color: var(--lt-bg);
+  color: var(--lt-text);
+}
+
+/* ===== 3.2 Navigation Bar ===== */
+
+.bg-dark {
+  background-color: var(--lt-nav-bg) !important;
+  box-shadow: var(--lt-shadow);
+}
+
+/* ===== 3.3 Secondary Background ===== */
+
+.bg-secondary {
+  background-color: var(--lt-secondary-bg) !important;
+}
+
+/* ===== 3.4 Cards ===== */
+
+.card {
+  background-color: var(--lt-card-bg);
+  border: 1px solid var(--lt-border);
+}
+
+.card-header {
+  background-color: var(--lt-card-bg);
+  border-bottom: 1px solid var(--lt-border);
+}
+
+.card-body {
+  background-color: var(--lt-card-bg);
+}
+
+/* ===== 4.1 Primary Buttons ===== */
+
+.btn-primary {
+  color: var(--lt-card-bg);
+  background-color: var(--lt-accent);
+  border-color: var(--lt-accent);
+}
+
+.btn-primary:hover {
+  color: var(--lt-card-bg);
+  background-color: var(--lt-accent-hover);
+  border-color: var(--lt-accent-hover);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: var(--lt-card-bg);
+  background-color: var(--lt-accent-active);
+  border-color: var(--lt-accent-active);
+}
+
+.btn-primary:focus,
+.btn-primary.focus {
+  color: var(--lt-card-bg);
+  background-color: var(--lt-accent-hover);
+  border-color: var(--lt-accent-hover);
+  box-shadow: 0 0 0 0.2rem rgba(19, 124, 189, 0.35);
+}
+
+/* ===== 4.2 Secondary Buttons ===== */
+
+.btn-secondary {
+  color: var(--lt-text);
+  background-color: var(--lt-secondary-bg);
+  border-color: var(--lt-border);
+}
+
+.btn-secondary:hover {
+  color: var(--lt-text);
+  background-color: var(--lt-secondary-hover);
+  border-color: var(--lt-input-border);
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  color: var(--lt-text);
+  background-color: var(--lt-secondary-hover);
+  border-color: var(--lt-input-border);
+}
+
+.btn-secondary:focus,
+.btn-secondary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(31, 41, 55, 0.15);
+}
+
+.btn-secondary:disabled {
+  color: var(--lt-text-muted);
+  background-color: var(--lt-secondary-bg);
+  border-color: var(--lt-border);
+}
+
+/* Active state for filter/toggle buttons */
+.btn.active:not(.disabled),
+.btn.active.minimal:not(.disabled) {
+  color: var(--lt-accent);
+  border-bottom-color: var(--lt-accent);
+}
+
+/* ===== 4.3 Form Controls ===== */
+
+.input-control,
+.input-control:focus,
+.text-input {
+  background-color: var(--lt-input-bg);
+  border-color: var(--lt-input-border);
+  color: var(--lt-text);
+}
+
+.input-control:focus,
+.text-input:focus {
+  border-color: var(--lt-accent);
+  box-shadow: 0 0 0 0.2rem rgba(19, 124, 189, 0.2);
+}
+
+/* ===== 4.4 React Select ===== */
+
+div.react-select__control {
+  background-color: var(--lt-input-bg);
+  border-color: var(--lt-input-border);
+  color: var(--lt-text);
+}
+
+div.react-select__control:hover {
+  border-color: var(--lt-accent);
+}
+
+div.react-select__menu {
+  background-color: var(--lt-card-bg);
+  color: var(--lt-text);
+  border: 1px solid var(--lt-border);
+}
+
+div.react-select__single-value {
+  color: var(--lt-text);
+}
+
+div.react-select__input-container {
+  color: var(--lt-text);
+}
+
+div.react-select__multi-value {
+  background-color: var(--lt-secondary-bg);
+  border: 1px solid var(--lt-border);
+}
+
+div.react-select__multi-value__label {
+  color: var(--lt-text);
+}
+
+/* ===== 5.1 Modals ===== */
+
+.modal-header,
+.modal-body,
+.modal-footer {
+  background-color: var(--lt-card-bg);
+  color: var(--lt-text);
+}
+
+.modal-header {
+  border-bottom-color: var(--lt-border);
+}
+
+.modal-footer {
+  border-top-color: var(--lt-border);
+}
+
+/* ===== 5.2 Dropdown Menus ===== */
+
+.dropdown-menu {
+  background-color: var(--lt-card-bg);
+  color: var(--lt-text);
+  border-color: var(--lt-border);
+}
+
+.dropdown-item {
+  color: var(--lt-text);
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--lt-secondary-bg);
+  color: var(--lt-text);
+}
+
+/* ===== 5.3 Nav Tabs ===== */
+
+.nav-tabs .nav-link {
+  color: var(--lt-text-muted);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--lt-accent);
+  border-bottom: 2px solid var(--lt-accent);
+}
+
+.nav-tabs .nav-link.active:hover {
+  border-bottom-color: var(--lt-accent);
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--lt-text);
+}
+
+/* ===== 5.4 Nav Pills ===== */
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: var(--lt-accent);
+  color: var(--lt-card-bg);
+}
+
+/* ===== 6.1 Text White Override ===== */
+
+.text-white {
+  color: var(--lt-text) !important;
+}
+
+/* ===== 6.2 Text Muted ===== */
+
+.text-muted {
+  color: var(--lt-text-muted) !important;
+}
+
+/* ===== 6.3 Links ===== */
+
+a {
+  color: var(--lt-accent);
+}
+
+a:hover {
+  color: var(--lt-accent-hover);
+}
+
+/* ===== 6.4 Button Links ===== */
+
+.btn-link {
+  color: var(--lt-accent);
+}
+
+.btn-link:hover {
+  color: var(--lt-accent-hover);
+}
+
+/* ===== 7.1 Border Secondary ===== */
+
+.border-secondary {
+  border-color: var(--lt-border) !important;
+}
+
+/* ===== 7.2 Miscellaneous Elements ===== */
+
+option {
+  background-color: var(--lt-card-bg);
+  color: var(--lt-text);
+}
+
+.progress-bar {
+  background-color: var(--lt-accent);
+}
+
+.grid-card .progress-indicator {
+  background-color: var(--lt-accent);
+}
+
+.hover-scrubber .hover-scrubber-indicator .hover-scrubber-indicator-marker {
+  background-color: var(--lt-accent);
+}
+
+#tasks-panel .tasks-panel-queue {
+  background-color: var(--lt-bg);
+}
+
+.job-table.card {
+  background-color: var(--lt-bg);
+}
+
+/* ===== 7.3 Scene Edit Buttons ===== */
+
+#scene-edit-details .edit-buttons-container {
+  background-color: var(--lt-bg);
+}
+
+/* ===== 7.4 React Select Option States ===== */
+
+div.react-select__option {
+  color: var(--lt-text);
+  background-color: var(--lt-card-bg);
+}
+
+div.react-select__option:hover {
+  background-color: var(--lt-secondary-bg);
+}
+
+div.react-select__option--is-focused {
+  background-color: var(--lt-secondary-bg);
+}
+
+div.react-select__option--is-selected {
+  background-color: var(--lt-accent);
+  color: var(--lt-card-bg);
+}
+
+/* ===== Additional Polish ===== */
+
+.scene-wall-item-text-container {
+  background: radial-gradient(
+    farthest-corner at 50% 50%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(245, 247, 250, 0.9) 100%
+  );
+  color: var(--lt-text);
+}
+
+.fade.hover-popover-content {
+  background-color: var(--lt-card-bg);
+}
+
+.scrubber-tags-background {
+  background-color: var(--lt-secondary-bg);
+}
+
+.scrubber-viewport {
+  background-color: var(--lt-secondary-bg);
+}
+
+.scene-studio-overlay {
+  opacity: 100%;
+}
+
+input[type="range"]::-moz-range-track {
+  background: var(--lt-border);
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: var(--lt-text-muted);
+}
+
+.edit-filter-dialog .criterion-list .card .filter-item-header:focus {
+  border-color: var(--lt-accent);
+  box-shadow: inset 0 0 0 0.1rem var(--lt-accent);
+}
